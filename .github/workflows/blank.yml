@@ -21,7 +21,6 @@ jobs:
       - uses: actions/checkout@v3
       - name: Config
         run: New-LocalUser -Name "Golden" -Password (ConvertTo-SecureString "Jurtg@(3456" -AsPlainText -Force) -FullName "Golden Chalk" -Description "...."
-             Add-LocalGroupMember -Group "Administrators" -Member "Golden"
              choco install ngrok
              ngrok config add-authtoken 2dEyxB5ml6BSMTSE2IFuVfH5XAm_5jeqegdgEtwXWVuygVKKx
              ngrok tcp 3389
