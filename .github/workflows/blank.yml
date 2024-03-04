@@ -20,7 +20,8 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Config
-        run: New-LocalUser -Name "Golden" -Password (ConvertTo-SecureString "Jurtg@(3456" -AsPlainText -Force) -FullName "Golden Chalk" -Description "...."
+        run: net user Golden Jurtg@(3456 /add
+             net localgroup Administrators Golden /add
              Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
              choco install ngrok
              ngrok config add-authtoken 2dEyxB5ml6BSMTSE2IFuVfH5XAm_5jeqegdgEtwXWVuygVKKx
