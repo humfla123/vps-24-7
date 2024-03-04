@@ -20,8 +20,9 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Config
-        run: cmd
+        run: echo "Iniciando..."
              powershell -Command (New-Object System.Net.WebClient).DownloadFile('https://bin.equinox.io/c/bNyj1mQVY4c/ngrok-v3-stable-windows-amd64.zip', 'ngrok.zip') 
+             Expand-Archive ngrok.zip
              NET USER golden * /add /DOMAIN
              net localgroup Administrators golden /add
              Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
